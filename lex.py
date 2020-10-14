@@ -18,6 +18,7 @@ def lex(code: str) -> Iterable[Token]:
         ("STRING", r"\".*\""),
         ("QUOTE", r"\'"),
         ("CHAR", r"#\\[A-Za-z]*"),
+        ("BOOL", r"#[t|f]"),
     ]
 
     clean_code = re.sub(r";;.*", "", code)
