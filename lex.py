@@ -20,6 +20,7 @@ def lex(code: str) -> Iterable[Token]:
         ("CHAR", r"#\\[A-Za-z]*"),
         ("BOOL", r"#[t|f]"),
         ("NUMBER", r"(\+|\-|)\d+(\.\d*)?"),
+        ("NAME", r"([A-Za-z_%\+\-]|\.\.\.)[A-Za-z_0-9\-\>\?\!]*"),
     ]
 
     clean_code = re.sub(r";;.*", "", code)
